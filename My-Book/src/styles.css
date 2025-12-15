@@ -53,17 +53,18 @@ body {
 	top: 0;
 	left: 0;
 	content: '\2726';
-	font-size: 9px;
+	font-size: 6px;
 }
 
 .star:before {
 	color: transparent;
-	text-shadow: 0 0 3px rgb(201, 210, 219);
+	text-shadow: 0 0 1px rgb(201, 210, 219);
 }
 
 .star:after {
 	background: rgb(202, 212, 221);
 	-webkit-background-clip: text;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
