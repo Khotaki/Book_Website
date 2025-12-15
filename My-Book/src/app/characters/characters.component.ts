@@ -31,7 +31,7 @@ export class CharactersComponent {
     },
     {
       id: 'Kyren',
-      name: 'Kyren -',
+      name: 'Kyren Lockwood',
       role: 'The Silent Blade',
       description: 'An orphan raised as a weapon.',
       details: 'Kyren is brought into the Valoren household after losing everything and is raised among soldiers. His life is defined by discipline, loyalty, and restraint. Over time, personal attachment complicates his sense of duty, forcing him into choices that challenge the limits of obedience and sacrifice.',
