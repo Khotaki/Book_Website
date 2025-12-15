@@ -1,0 +1,39 @@
+<div class="container characters-container">
+  <div *ngIf="!selectedCharacter" class="character-list">
+    <div class="hero-section">
+      <h1 class="glow-text">Main Characters</h1>
+      <p>Select a character to unveil their story.</p>
+    </div>
+
+    <div class="cards-grid">
+      <div *ngFor="let char of characters" class="character-card glass-card" (click)="selectCharacter(char)">
+        <div class="card-image-wrapper">
+          <img [src]="char.image" [alt]="char.name" class="card-image" onerror="this.src='assets/placeholder.svg'">
+        </div>
+        <div class="card-content">
+          <h2>{{ char.name }}</h2>
+          <span class="role">{{ char.role }}</span>
+          <p>{{ char.description }}</p>
+          <button class="btn btn-outline btn-small">Read More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="selectedCharacter" class="character-detail">
+    <button (click)="clearSelection()" class="back-link">
+      &larr; Back to Characters
+    </button>
+    
+    <div class="detail-content glass-card">
+      <div class="detail-image-wrapper">
+         <img [src]="selectedCharacter.image" [alt]="selectedCharacter.name" class="detail-image" onerror="this.src='assets/placeholder.svg'">
+      </div>
+      <div class="detail-text-content">
+        <h1 class="glow-text">{{ selectedCharacter.name }}</h1>
+        <h3 class="role-highlight">{{ selectedCharacter.role }}</h3>
+        <p class="detail-text">{{ selectedCharacter.details }}</p>
+      </div>
+    </div>
+  </div>
+</div>

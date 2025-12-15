@@ -1,1 +1,155 @@
-/* You can add global styles to this file, and also import other style files */
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Fantasy Color Palette */
+  --color-bg-primary: #0b0d10;
+  --color-bg-secondary: #14161b;
+  --color-text-primary: #f0f0f0;
+  --color-text-secondary: #a0a0a0;
+  
+  --color-accent: #d4af37; /* Gold */
+  --color-accent-hover: #ffd700;
+  --color-magic: #9b4dca; /* Magical Purple */
+  --color-magic-glow: rgba(155, 77, 202, 0.6);
+  
+  --color-border: #333;
+  
+  /* Fonts */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Effects */
+  --shadow-glow: 0 0 10px var(--color-magic-glow);
+  --card-bg: rgba(20, 22, 27, 0.7);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-bg-primary);
+  background-image: radial-gradient(circle at top right, #1a1025 0%, transparent 40%),
+                    radial-gradient(circle at bottom left, #0f1825 0%, transparent 40%);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.star {
+	position: fixed;
+	pointer-events: none;
+}
+
+.star:before, .star:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: '\2726';
+	font-size: 9px;
+}
+
+.star:before {
+	color: transparent;
+	text-shadow: 0 0 3px rgb(201, 210, 219);
+}
+
+.star:after {
+	background: rgb(202, 212, 221);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Global Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.glow-text {
+  text-shadow: 0 0 10px var(--color-magic-glow);
+}
+
+/* Magic Button */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #b8860b 100%);
+  color: #000;
+  border-radius: 4px;
+  font-weight: 700;
+  border: 1px solid var(--color-accent);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: var(--font-heading);
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #ffd700 0%, var(--color-accent) 100%);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-small {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+}
+
+.btn-outline:hover {
+  background: rgba(212, 175, 55, 0.1);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+/* Glassmorphism Card */
+.card, .glass-card {
+  background-color: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: var(--glass-border);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.5), 0 0 10px rgba(212, 175, 55, 0.1);
+}
